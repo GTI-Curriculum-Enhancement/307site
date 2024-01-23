@@ -562,7 +562,7 @@ section .air.air4 {
 }
 
 /* Phone */
-@media only screen and (max-width : 375px){
+@media only screen and (max-width : 710px){
     /* landscape orientation */
     .centered.tmp {
         display: block;
@@ -570,6 +570,11 @@ section .air.air4 {
 
     #gti-logo {
         max-width: 50vw;
+    }
+
+    .push-left {
+        margin: auto;
+        padding: 10px;
     }
 }
 
