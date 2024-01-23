@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Material Design -->
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    <link rel="stylesheet" href="/index.css">
+    <style ref="stylesheet" href="/themes/dark-hc.css"></style>
+    <link rel="stylesheet" href="/index.css" id="GTI_STYLESHEET">
+    </link>
     <script src="/extras/pre-runner.js"></script>
-    <title>Website</title>
+
+    <title>Welcome to Room 307</title>
 </head>
+
 <body>
-    <button class="mdc-button foo-button">
-        <div class="mdc-button__ripple"></div>
-        <span class="mdc-button__label">Button</span>
-      </button>
+    <!-- 🌟clouds 🌟 -->
+    <section style="transform: rotate(0deg)">
+        <div class='air air1'></div>
+        <div class='air air2'></div>
+        <div class='air air3'></div>
+        <div class='air air4'></div>
+    </section>
+
+    <main>
+        <p class="centered" style="margin-bottom: 15vh;">Hello, Welcome to Room 307</p>
+
+        <div class="centered tmp">
+            <div class="display-box glow light">
+                <p class="centered">
+                    Thank you for stopping by. Our website is currently under development, 
+                    and we're working diligently to enhance your experience. We appreciate your understanding and patience.            
+                </p>
+            </div>
+            
+            <div class="centered">
+                <img id="gti-logo" src="/assets/GtiCropped.png">
+            </div>
+        </div>
+        
+    </main>
+
+    <!-- Removed once all assets are loaded -->
+    <div id="overlayDiv" class="overlay">
+        <div class="loader">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+          </div>
+    </div>
+
     <script src="/index.js"></script>
 </body>
+
 </html>
