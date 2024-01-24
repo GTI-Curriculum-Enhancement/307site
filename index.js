@@ -15,16 +15,24 @@ async function showContent(force) {
                     window.scrollTo(0, 0);
                     overlayDiv.style.opacity = "0";
 
-                    setTimeout(() => overlayDiv.remove(), 1000);
+                    setTimeout(() => {
+                        overlayDiv.remove();
+                        finalizeContent();
+                    }, 1000);
                 } else showContent();
             }, 100);
     }
 }
 
+function finalizeContent() {
+    // Slideshow
+    startSlideshow();
+}
+
 function main() {
     showContent();
 
-    contentLoaded = true
+    contentLoaded = true;
 }
 
 main();
