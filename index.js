@@ -1,6 +1,20 @@
 const DEBUG = true;
 contentLoaded = false;
 
+window.onscroll = function () {
+    if (window.scrollY <= sticky) navbar.classList.add("nav-up");
+    else navbar.classList.remove("nav-up");
+};
+
+window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (event) => {
+        switchTheme(event.matches);
+    });
+
+var navbar = document.getElementById("head-menu");
+var sticky = navbar.offsetTop;
+
 async function showContent(force) {
     const overlayDiv = document.getElementById("overlayDiv");
 

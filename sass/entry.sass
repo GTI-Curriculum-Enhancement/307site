@@ -27,11 +27,10 @@
 
     --color-shift-time: .1s
     --size-shift-time: .3s
-    transition:
-        background: var(--color-shift-time) ease,
-        background-color: var(--color-shift-time) ease,
-        color: var(--color-shift-time) ease,
-        transform: var(--size-shift-time) ease-in-out
+    background: var(--color-shift-time) ease,
+    background-color: var(--color-shift-time) ease,
+    color: var(--color-shift-time) ease,
+    transform: var(--size-shift-time) ease-in-out
 
 :root
     --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem)
@@ -47,21 +46,11 @@
 
     --font-scifi: "Source Code Pro", monospace
 
-[data-bs-theme="light"],
-text-light
-    color: rgb(0,0,0,0)
-
-[data-bs-theme="dark"],
-text-light
-    color: #fff
-    
-rounded
+.rounded
     border-radius: 10
 
 html,
 body
-    background-color: var(--bs-body-bg)
-    color: var(--on-background)
     margin: 0
     height: 100vh
     display: grid
@@ -83,14 +72,13 @@ h5
     font-size: var(--font-size-mg)
 
 p
-    @extend text-light 
     font-family: var(--font-scifi)
     font-size: var(--font-size-base)
     transition: font-size 0.3s ease
 
 header
     transition: transform 0.3s ease-in-out
-    background-color: var(--background)
+    background-color: var(--bs-body-bg)
     align-items: center
     display: flex
     z-index: 100
@@ -395,8 +383,99 @@ footer
         margin-top: 64px
         margin-left: 0px
 
-/* Image carousel */
+/* Theme toggle */
+.switch
+    font-size: 17px
+    position: relative
+    display: inline-block
+    width: 64px
+    height: 34px
 
+    & input
+        opacity: 0
+        width: 0
+        height: 0
+
+.slider
+    position: absolute
+    cursor: pointer
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: #73C0FC
+    transition: .4s
+    border-radius: 30px
+
+    &:before
+        position: absolute
+        content: ""
+        height: 30px
+        width: 30px
+        border-radius: 20px
+        left: 2px
+        bottom: 2px
+        z-index: 2
+        background-color: #e8e8e8
+        transition: .4s
+
+.sun svg
+    position: absolute
+    top: 6px
+    left: 36px
+    z-index: 1
+    width: 24px
+    height: 24px
+
+.moon svg
+    fill: #73C0FC
+    position: absolute
+    top: 5px
+    left: 5px
+    z-index: 1
+    width: 24px
+    height: 24px
+
+// .switch:hover, // Why did they even make this?
+.sun svg
+    animation: rotate 15s linear infinite
+
+@keyframes rotate
+
+    0%
+        transform: rotate(0)
+
+    100%
+        transform: rotate(360deg)
+
+// .switch:hover,
+.moon svg
+    animation: tilt 5s linear infinite
+
+@keyframes tilt
+
+    0%
+        transform: rotate(0deg)
+
+    25%
+        transform: rotate(-10deg)
+
+    75%
+        transform: rotate(10deg)
+
+    100%
+        transform: rotate(0deg)
+
+.input:checked + .slider
+    background-color: #183153
+
+.input:focus + .slider
+    box-shadow: 0 0 1px #183153
+
+.input:checked + .slider:before
+    transform: translateX(30px)
+
+/* Image carousel */
 #stage
     width: 100%
     height: 80vh

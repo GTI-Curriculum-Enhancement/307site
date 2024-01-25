@@ -14,6 +14,7 @@ function switchTheme(forceDark = false) {
 
     ACTIVE_DARK = !ACTIVE_DARK
     elm.setAttribute("data-bs-theme", ACTIVE_DARK ? "dark" : "light")
+    document.getElementById("theme-toggle-switch").checked = ACTIVE_DARK
 }
 
 // Check for OS preferred theme
