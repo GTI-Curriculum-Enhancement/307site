@@ -1,5 +1,5 @@
 const DEBUG = true;
-contentLoaded = false;
+let contentLoaded = false;
 
 window.onscroll = function () {
     if (window.scrollY <= sticky) navbar.classList.add("nav-up");
@@ -38,9 +38,19 @@ async function showContent(force) {
     }
 }
 
+function startCarousels() {
+    const myCarouselElement = document.querySelector("#homeCarousel");
+
+    const carousel = new bootstrap.Carousel(myCarouselElement, {
+        interval: 5000,
+    });
+}
+
 function finalizeContent() {
     // Slideshow
-    startSlideshow();
+    //startSlideshow();
+
+    //startCarousels()
 }
 
 function main() {

@@ -17,13 +17,13 @@
 @import "../node_modules/bootstrap/scss/helpers"
 
 @import "https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap"
+@import "https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
 
 *,
 *::after,
 *::before
     // For debugging
     // border: 1px dotted red
-    font-family: "Source Code Pro", Arial, Helvetica, sans-serif
 
     --color-shift-time: .1s
     --size-shift-time: .3s
@@ -44,13 +44,67 @@
     --background-alt: rgb(0, 53, 156)
     --background-grad: linear-gradient(90deg, rgba(0, 53, 156, 1) 0%, rgba(0, 123, 255, 1) 100%)
 
-    --font-scifi: "Source Code Pro", monospace
+    --font-scifi: "Source Code Pro", Arial, Helvetica, sans-serif
+    --font-rale: "Raleway"
+
+:root[data-bs-theme="light"]
+    --text: rgb(14, 19, 22)
+    --itext: rgb(232, 237, 240)
+    --bs-body-bg: rgb(236, 241, 244)
+    --primary: rgb(47, 70, 86)
+    --secondary: rgb(138, 170, 193)
+    --accent: rgb(71, 116, 148)
+
+:root[data-bs-theme="dark"]
+    --text: rgb(232, 237, 240)
+    --itext: rgb(14, 19, 22)
+    --bs-body-bg: rgb(11, 16, 19)
+    --primary: rgb(168, 191, 207)
+    --secondary: rgb(61, 93, 116)
+    --accent: rgb(106, 151, 183)
 
 .rounded
     border-radius: 10
 
+.color-ease
+    transition: background-color ease .25s
+
+.f-sci
+    font: var(--font-scifi)
+
+.f-rale
+    font: var(--font-rale)
+
+.saturate
+    filter: saturate(3)
+.grayscale
+    filter: grayscale(100%)
+.contrast
+    filter: contrast(160%)
+.brightness
+    filter: brightness(0.25)
+.blur
+    filter: blur(3px)
+.invert
+    filter: invert(100%)
+.sepia
+    filter: sepia(100%)
+.huerotate
+    filter: hue-rotate(180deg)
+.rss.opacity
+    filter: opacity(50%)
+
+.carousel-inner
+    margin: 10px 50px
+
+.carousel-item
+    @extend .rounded
+    @extend .glow, .light
+    background-color: var(--bs-tertiary-bg)
+
 html,
 body
+    @extend .color-ease
     margin: 0
     height: 100vh
     display: grid
@@ -72,11 +126,11 @@ h5
     font-size: var(--font-size-mg)
 
 p
-    font-family: var(--font-scifi)
     font-size: var(--font-size-base)
     transition: font-size 0.3s ease
 
 header
+    @extend .color-ease
     transition: transform 0.3s ease-in-out
     background-color: var(--bs-body-bg)
     align-items: center
@@ -90,13 +144,12 @@ header
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2)
 
 #home-welcome
-    margin-bottom: 5vh
+    margin: 5vh
 
 .nav-up
     transform: translateY(-100px)
 
 .title
-    font-family: var(--font-scifi)
     color: var(--text-color)
     font-size: 48px
     font-weight: 200
@@ -104,10 +157,11 @@ header
     transition: font-size 0.3s ease
 
 .display-box
-    background: var(--surface-bright)
-    padding: 30px
+    background: var(--bs-primary-bg-subtle)
+    color: var(--itext)
+    padding: 10px
+    margin: 10vh
     border-radius: 10px
-    font-family: var(--font-scifi)
     font-weight: 400
     transition: margin 0.5s ease
 
@@ -122,9 +176,8 @@ header
     box-shadow: 0px 0px 105px 45px rgba(0, 0, 0, 0.07)
 
 .smooth-size
-    transition:
-        height: var(--size-shift-time),
-        width: var(--size-shift-time)
+    transition: width ease var(--size-shift-time)
+    transition: height ease var(--size-shift-time)
 
 @media screen and (max-width: 650px)
     .title
@@ -134,7 +187,7 @@ header
         font-size: 12px
 
     .display-box
-        margin: 30vh 0
+        margin: 5vh 0
 
     .lucky-message
         font-size: 8px
@@ -451,6 +504,17 @@ footer
 // .switch:hover,
 .moon svg
     animation: tilt 5s linear infinite
+
+#carouselContainer
+    margin-top: 5vh
+
+.c-img
+    display: block
+    margin-left: auto
+    margin-right: auto
+    max-width: 80vw
+    max-height: 80vh
+    height: auto
 
 @keyframes tilt
 
