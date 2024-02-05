@@ -94,13 +94,14 @@
 .rss.opacity
     filter: opacity(50%)
 
-.carousel-inner
-    margin: 10px 50px
-
 .carousel-item
     @extend .rounded
     @extend .glow, .light
-    background-color: var(--bs-tertiary-bg)
+
+#gti-carousel-logo
+    background-color: var(--bs-secondary-color)
+    border: var(--bs-primary-border-subtle) .8px
+    width: fit-content
 
 html,
 body
@@ -232,7 +233,7 @@ footer
     left: 0
     width: 100%
     height: 100%
-    background-color: var(--surface-container-lowest)
+    background-color: var(--bs-light-bg-subtle)
     z-index: 900
     transition: opacity 1s ease
     place-items: center
@@ -506,7 +507,12 @@ footer
     animation: tilt 5s linear infinite
 
 #carouselContainer
+    @extend .rounded
     margin-top: 5vh
+    width: 80vw
+    height: 90vh
+    padding: 30px 0
+    background-color: $blue-900
 
 .c-img
     display: block

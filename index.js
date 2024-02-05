@@ -20,9 +20,8 @@ async function showContent(force) {
 
     if (overlayDiv) {
         if (force) {
-            window.scrollTo(0, 0);
-            overlayDiv.style.opacity = "0";
             overlayDiv.remove();
+            window.scrollTo(0, 0);
         } else
             setTimeout(() => {
                 if (contentLoaded) {
@@ -49,12 +48,11 @@ function startCarousels() {
 function finalizeContent() {
     // Slideshow
     //startSlideshow();
-
     //startCarousels()
 }
 
 function main() {
-    showContent();
+    showContent(DEBUG);
 
     contentLoaded = true;
 }
