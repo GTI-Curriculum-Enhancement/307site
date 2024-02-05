@@ -1,0 +1,23 @@
+{
+  "name": "gti-site",
+  "version": "1.0.0",
+  "description": "A simple site for the Granite Techincal Institute",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GTI-Curriculum-Enhancement/307site.git"
+  },
+  "author": "Sombody101",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GTI-Curriculum-Enhancement/307site/issues"
+  },
+  "homepage": "https://github.com/GTI-Curriculum-Enhancement/307site#readme"
+}
