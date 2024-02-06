@@ -1,4 +1,6 @@
-const DEBUG = true;
+import * as bootstrap from "bootstrap";
+
+const DEBUG = false;
 let contentLoaded = false;
 
 window.onscroll = function () {
@@ -15,6 +17,12 @@ window
 var navbar = document.getElementById("head-menu");
 var sticky = navbar.offsetTop;
 
+function handleCookie(cookiesOkay) {
+    if (cookiesOkay) {
+        setCookie("user_dark", ACTIVE_DARK, 7); // Cookie expires in 7 days
+    }
+}
+
 async function showContent(force) {
     const overlayDiv = document.getElementById("overlayDiv");
 
@@ -25,7 +33,7 @@ async function showContent(force) {
         } else
             setTimeout(() => {
                 if (contentLoaded) {
-                    window.scrollTo(0, 0);
+                    if (!DEBUG) window.scrollTo(0, 0);
                     overlayDiv.style.opacity = "0";
 
                     setTimeout(() => {
@@ -45,10 +53,21 @@ function startCarousels() {
     });
 }
 
+function showToasts() {
+    const toastElList = document.querySelectorAll(".toast");
+    const toastList = [...toastElList].map(
+        (toastEl) => new bootstrap.Toast(toastEl)
+    );
+
+    toastList.forEach((e) => e.show());
+}
+
 function finalizeContent() {
     // Slideshow
     //startSlideshow();
     //startCarousels()
+
+    showToasts();
 }
 
 function main() {
