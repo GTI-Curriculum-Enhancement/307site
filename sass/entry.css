@@ -8896,7 +8896,7 @@ textarea.form-control-lg {
   border-radius: var(--bs-border-radius) !important;
 }
 
-.rounded-3 {
+.rounded-3, #main-logo-container {
   border-radius: var(--bs-border-radius-lg) !important;
 }
 
@@ -14333,6 +14333,20 @@ header {
   transition: margin 0.5s ease;
 }
 
+.glow, .carousel-item {
+  box-shadow: 0px 0px 105px 15px rgba(255, 255, 255, 0.03);
+}
+.glow [data-bs-theme=dark], .carousel-item [data-bs-theme=dark] {
+  box-shadow: 0px 0px 105px 45px rgba(0, 0, 0, 0.07);
+}
+
+.glow-ivs {
+  box-shadow: 0px 0px 105px 45px rgba(0, 0, 0, 0.07);
+}
+.glow-ivs [data-bs-theme=dark] {
+  box-shadow: 0px 0px 105px 15px rgba(255, 255, 255, 0.03);
+}
+
 .glow.light, .carousel-item {
   box-shadow: 0px 0px 105px 15px rgba(255, 255, 255, 0.03);
 }
@@ -14344,6 +14358,14 @@ header {
 .smooth-size {
   transition: width ease var(--size-shift-time);
   transition: height ease var(--size-shift-time);
+}
+
+#main-logo-container {
+  background-color: var(--bs-info-bg-subtle);
+  padding: 10px 30px;
+  margin: 10% 5vw;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 @media screen and (max-width: 650px) {
